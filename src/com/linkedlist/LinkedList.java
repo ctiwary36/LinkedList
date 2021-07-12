@@ -1,47 +1,47 @@
 package com.linkedlist;
 
 public class LinkedList {
-        Node head;
+    Node head;
 
-        class Node {
-            int data;
-            Node next;
+    class Node{
+        int data;
+        Node next;
 
-            public Node(int data) {
-                this.data = data;
-                //this.next = null;   by default object value is null
-            }
+        public Node(int data) {
+            this.data = data;
         }
+    }
 
-        public Node insert(int data) {
-            Node newNode = new Node(data);
-            if (head == null) {
-                head = newNode;
-            } else {
-                Node temp = head;
-                while (temp.next != null) {
-                    temp = temp.next;
-                }
-                temp.next = newNode;
-            }
-            return newNode;
+    public Node insert(int data) {
+        Node newNode = new Node(data);
+        if(head == null) {
+            head = newNode;
         }
-
-        public void print() {
-
+        else {
             Node temp = head;
-            while (temp != null) {
-                System.out.print(temp.data + "-> ");
+            while(temp.next != null) {
                 temp = temp.next;
             }
-
+            temp.next = newNode;
         }
+        return newNode;
+    }
 
-        public void push(int data) {
-            Node newNode = new Node(data);
-            newNode.next = head;
-            head = newNode;
+    public void print() {
 
+        Node temp = head;
+        while(temp != null) {
+            System.out.print(temp.data +  "-> ");
+            temp = temp.next;
         }
 
     }
+
+    public void push(int data) {
+        Node newNode = new Node(data);
+        newNode .next = head;
+        head = newNode;
+
+    }
+
+}
