@@ -3,6 +3,7 @@ package com.linkedlist;
 public class LinkedList {
     Node head;
 
+
     class Node{
         int data;
         Node next;
@@ -34,14 +35,12 @@ public class LinkedList {
             System.out.print(temp.data +  "-> ");
             temp = temp.next;
         }
-
     }
 
     public void push(int data) {
         Node newNode = new Node(data);
         newNode .next = head;
         head = newNode;
-
     }
 
     public void insertAfter(Node prevNode, int value) {
@@ -87,23 +86,4 @@ public class LinkedList {
         return index;
 
     }
-
-    public void popLast() {
-        if (head == null) {
-            System.out.println("Stack is empty");
-        }
-        if (head == null) {
-            System.out.println(head.data);
-            head = null;
-        }
-        Node temp = head;
-        while (temp.next.next != null) {
-            temp = temp.next;
-
-        }
-        temp.next = null;
-        System.out.println("Delete last node::");
-
-    }
-
 }
