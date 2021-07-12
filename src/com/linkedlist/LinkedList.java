@@ -49,13 +49,23 @@ public class LinkedList {
             System.out.println("Prev Node should not be null");
             return;
         }
-        //56 ->70
-        //56 -> 30 -> 70
         Node newNode = new Node(value);
         newNode.next = prevNode.next;
         prevNode.next = newNode;
 
         print();
+
+    }
+
+    public int pop() {
+        int popData = 0;
+        if (head == null) {
+            System.out.println("Stack over flow ");
+        }
+        popData = head.data;
+        head = head.next;
+
+        return popData;
 
     }
 
