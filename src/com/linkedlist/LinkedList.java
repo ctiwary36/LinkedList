@@ -49,6 +49,7 @@ public class LinkedList {
             System.out.println("Prev Node should not be null");
             return;
         }
+
         Node newNode = new Node(value);
         newNode.next = prevNode.next;
         prevNode.next = newNode;
@@ -66,6 +67,42 @@ public class LinkedList {
         head = head.next;
 
         return popData;
+
+    }
+
+    public int search(int val) {
+        if (head == null) {
+            System.out.println("List is Empty");
+            return -1;
+        }
+        int index = 1;
+        Node newNode = head;
+        while (newNode != null) {
+            if (newNode.data == val) {
+                break;
+            }
+            index++;
+            newNode = newNode.next;
+        }
+        return index;
+
+    }
+
+    public void popLast() {
+        if (head == null) {
+            System.out.println("Stack is empty");
+        }
+        if (head == null) {
+            System.out.println(head.data);
+            head = null;
+        }
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+
+        }
+        temp.next = null;
+        System.out.println("Delete last node::");
 
     }
 
